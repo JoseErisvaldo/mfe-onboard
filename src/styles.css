@@ -1,71 +1,105 @@
 :root {
+  --bg: #fefaf4;
+  --surface: #fffcf5;
+  --line: #e6d8c4;
+  --text: #2d241d;
+  --muted: #675346;
+  --brand: #c14a1f;
+  --brand-strong: #943415;
   font-family: "DM Sans", "Segoe UI", sans-serif;
 }
 
 body {
   margin: 0;
+  background:
+    radial-gradient(circle at 10% 0, #ffe8d6 0, transparent 32%),
+    radial-gradient(circle at 100% 90%, #fdf0cb 0, transparent 28%), var(--bg);
+  color: var(--text);
 }
 
-.card {
-  border-radius: 16px;
-  border: 1px solid #dfd8ce;
-  background: linear-gradient(145deg, #fffef9, #f7f1e8);
+.onboard-page {
+  display: grid;
+  gap: 14px;
+}
+
+.onboard-page .project-pill {
+  margin: 0;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid #d6b38f;
+  color: var(--brand-strong);
+  background: #fff1e4;
+  border-radius: 999px;
+  padding: 8px 12px;
+  width: fit-content;
+  font-weight: 700;
+}
+
+.onboard-page .card {
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: var(--surface);
   padding: 24px;
-  color: #2f2924;
 }
 
-h2 {
-  margin: 0 0 8px;
-  font-size: 1.5rem;
+.onboard-page h2 {
+  margin: 0;
+  font-size: 1.55rem;
 }
 
-.sub {
-  margin: 0 0 20px;
-  color: #5f5248;
+.onboard-page .sub {
+  margin: 6px 0 18px;
+  color: var(--muted);
 }
 
-.form-grid {
+.onboard-page .form-grid {
   display: grid;
   gap: 12px;
 }
 
-label {
+.onboard-page label {
   display: grid;
   gap: 6px;
   font-weight: 600;
   font-size: 0.95rem;
 }
 
-input,
-select,
-button {
+.onboard-page input,
+.onboard-page select,
+.onboard-page button {
   border-radius: 10px;
-  border: 1px solid #b9a99c;
+  border: 1px solid #d4c2ac;
   font: inherit;
   padding: 10px 12px;
+  background: #fffefc;
 }
 
-button {
-  background: #1f6f4a;
-  color: #f8fff6;
-  border-color: #1f6f4a;
+.onboard-page button {
+  background: linear-gradient(120deg, #df5b2b, #c6491f);
+  color: #fffaf5;
+  border: none;
   cursor: pointer;
   font-weight: 700;
 }
 
-.preview {
+.onboard-page .preview {
   margin-top: 18px;
-  border-top: 1px dashed #b9a99c;
+  border-top: 1px dashed #d4c2ac;
   padding-top: 14px;
 }
 
-.preview ul {
-  margin: 8px 0 0;
+.onboard-page .preview h3 {
+  margin: 0;
+}
+
+.onboard-page .preview ul {
+  margin: 10px 0 0;
   padding-left: 18px;
 }
 
-.saved {
+.onboard-page .saved {
   margin-top: 14px;
-  color: #1f6f4a;
+  color: var(--brand-strong);
   font-weight: 700;
 }

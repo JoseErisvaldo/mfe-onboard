@@ -48,67 +48,75 @@ function App() {
   }
 
   return (
-    <main className="card">
-      <h2>Onboard de cliente</h2>
-      <p className="sub">Cadastre os dados para liberar as telas do sistema.</p>
+    <main className="onboard-page">
+      <header className="project-header">
+        <p className="project-pill">Projeto Microfrontends</p>
+      </header>
 
-      <form onSubmit={onSubmit} className="form-grid">
-        <label>
-          Nome do cliente
-          <input
-            name="nome"
-            value={formData.nome}
-            onChange={onChange}
-            required
-            placeholder="Ex.: Ana Oliveira"
-          />
-        </label>
+      <section className="card">
+        <h2>Onboard de cliente</h2>
+        <p className="sub">
+          Cadastre os dados para liberar as telas do sistema.
+        </p>
 
-        <label>
-          E-mail
-          <input
-            type="email"
-            name="email"
-            value={formData.email}
-            onChange={onChange}
-            required
-            placeholder="ana@empresa.com"
-          />
-        </label>
+        <form onSubmit={onSubmit} className="form-grid">
+          <label>
+            Nome do cliente
+            <input
+              name="nome"
+              value={formData.nome}
+              onChange={onChange}
+              required
+              placeholder="Ex.: Ana Oliveira"
+            />
+          </label>
 
-        <label>
-          Empresa
-          <input
-            name="empresa"
-            value={formData.empresa}
-            onChange={onChange}
-            required
-            placeholder="Empresa XYZ"
-          />
-        </label>
+          <label>
+            E-mail
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={onChange}
+              required
+              placeholder="ana@empresa.com"
+            />
+          </label>
 
-        <label>
-          Plano contratado
-          <select name="plano" value={formData.plano} onChange={onChange}>
-            <option value="basico">Basico</option>
-            <option value="pro">Pro</option>
-            <option value="enterprise">Enterprise</option>
-          </select>
-        </label>
+          <label>
+            Empresa
+            <input
+              name="empresa"
+              value={formData.empresa}
+              onChange={onChange}
+              required
+              placeholder="Empresa XYZ"
+            />
+          </label>
 
-        <button type="submit">Salvar onboard</button>
-      </form>
+          <label>
+            Plano contratado
+            <select name="plano" value={formData.plano} onChange={onChange}>
+              <option value="basico">Basico</option>
+              <option value="pro">Pro</option>
+              <option value="enterprise">Enterprise</option>
+            </select>
+          </label>
 
-      <section className="preview">
-        <h3>Telas previstas para este plano</h3>
-        <ul>
-          {suggestedScreens.map((screen) => (
-            <li key={screen}>{screen}</li>
-          ))}
-        </ul>
+          <button type="submit">Salvar onboard</button>
+        </form>
+
+        <section className="preview">
+          <h3>Telas previstas para este plano</h3>
+          <ul>
+            {suggestedScreens.map((screen) => (
+              <li key={screen}>{screen}</li>
+            ))}
+          </ul>
+        </section>
+
+        {savedAt ? <p className="saved">Cadastro salvo em {savedAt}</p> : null}
       </section>
-
-      {savedAt ? <p className="saved">Cadastro salvo em {savedAt}</p> : null}
     </main>
   );
 }
